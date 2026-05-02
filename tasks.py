@@ -65,8 +65,10 @@ def executable(context):  # pylint: disable=unused-argument
         # distpath, workpath, and specpath must be different directories: PyInstaller wipes the workpath
         # mid-build and would otherwise delete artifacts the dist/spec steps still need.
         work_path = exe_path / "_build"
+        icon_path = SOURCE_DIRECTORY / "icon" / "buzzer.ico"
         task_utilities.execute_command(
             f"""pyinstaller {source_script} --onefile --windowed --noconfirm --name BuzzerDetector
+                --icon {icon_path.as_posix()}
                 --distpath {exe_path.as_posix()} --workpath {work_path.as_posix()}
                 --specpath {exe_path.as_posix()}"""
         )
