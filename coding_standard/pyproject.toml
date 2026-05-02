@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 120
+
+[tool.docformatter]
+blank = true
+recursive = true
+wrap-descriptions = 120
+wrap-summaries = 120
+
+[tool.isort]
+line_length = 120
+no_sections = true
+multi_line_output = 3
